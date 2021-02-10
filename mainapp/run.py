@@ -15,10 +15,11 @@ def build_html_url(route, name):
     
 @app.route("/")
 def hello():
-    return F"Hello from this super app, list of available routes:<br>{build_html_url('load/s3', 'load data from s3')}" \
-                F"<br>{build_html_url('load/rds', 'load data from rds')}" \
-                F"<br>{build_html_url('clear', 'clear rds data')}" \
-                F"<br>{build_html_url('transfert/rds', 'transfert s3 data to rds')}" 
+    return F"<h1>BI&Big Data</h1>"\
+            F"<p>30h00</p>"\
+            F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
+            F"<button name='name' value='BI'>Ajouter</button>"\
+            F"</form>"
                 
 @app.route("/load/s3")
 def loadS3():
@@ -27,10 +28,6 @@ def loadS3():
 @app.route("/load/rds")
 def loadRDS():
     return requests.get(url=build_url("/load/rds")).text
-    
-@app.route("/clear")
-def clearRDS():
-    return requests.get(url=build_url("/clear")).text
 
 @app.route("/transfert/rds")
 def transfertToRDS():
