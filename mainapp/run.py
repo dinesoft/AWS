@@ -9,9 +9,9 @@ PORT = 3000
 def build_url(route):
     return F"http://{IP}:{PORT}/{route}"
 
-def build_html_url(route, name):
+def build_html_url(route):
     route = build_url(route)
-    return F"<a href={route} target='_blank'>{name}</a>"
+    return F"<button onclick={route}>Ajouter</button>"
     
 @app.route("/")
 def hello():
