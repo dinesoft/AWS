@@ -18,7 +18,7 @@ def hello():
     return F"<h1>BI&Big Data</h1>"\
             F"<p>30h00</p>"\
             F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
-            F"<button name='name' value='BI'>Ajouter</button>"\
+            F"<br>{build_html_url('transfert/rds')}"\
             F"</form>"
                 
 @app.route("/load/s3")
