@@ -27,13 +27,6 @@ def loadRDS():
     response.headers.add("Access-Control-Allow-Origin", "*")
     return response
     
-@app.route("/clear")
-def clearRDS():
-    rds = RDS()
-    result = rds.clear()
-    response = Response("Clear")
-    response.headers.add("Access-Control-Allow-Origin", "*")
-    return response
     
 @app.route("/transfert/rds")
 def transfertToRDS():
@@ -50,8 +43,8 @@ def transfertToRDS():
 class S3:
     def __init__(self):
         self.s3 = boto3.client('s3',
-                               aws_access_key_id='AKIAWEWNDMY3VAXBGPJM',
-                               aws_secret_access_key='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')
+                               aws_access_key_id='AKIARWSWTT6ZC5GTGTQW',
+                               aws_secret_access_key='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')
 
     def load(self, filter):
         if(filter == ''):
@@ -59,8 +52,8 @@ class S3:
         else:
             request = F"SELECT * FROM s3object s WHERE s._1 LIKE '%{filter}%'"
         response = self.s3.select_object_content(
-            Bucket='projet-final',
-            Key='notes-ges.csv',
+            Bucket='esgiproject',
+            Key='matieres_master.csv',
             ExpressionType='SQL',
             Expression=request,
             InputSerialization={
