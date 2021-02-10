@@ -82,28 +82,21 @@ class S3:
 class RDS:
 
     def __init__(self):
-        self.cnx =  mysql.connector.connect(user='admin', password='adminadmin',
-                          host='database-projet-final.cr3gygd34o8b.us-east-1.rds.amazonaws.com',
-                          database='notes')
- 
-    def clear(self):
-        cursor = self.cnx.cursor()
-        cursor.execute("delete from notes")
-        self.cnx.commit()
-        return 
+        self.cnx =  mysql.connector.connect(user='traingat', password='Jesaispas91!',
+                          host='projet.ccjtv3ejgmft.eu-west-3.rds.amazonaws.com',
+                          database='projet')
+
         
     def insert(self, data):
         cursor = self.cnx.cursor()
-        add_query = ("INSERT INTO notes "
-                   "(matiere, intervenant, coef, ects, CC1, CC2) "
-                   "VALUES (%s, %s, %s, %s, %s, %s)")
+        add_query = ("INSERT INTO projet "
+                   "(matiere, nbHeures) "
+                   "VALUES (%s, %s)")
         for i in data[0].split("|"):
             if(len(i) == 0):
                 continue
             split_data = i.split(",")
-            print(split_data)
-            insert_data = (split_data[0], split_data[1], split_data[2], split_data[3], split_data[4], split_data[5])
-            print(insert_data)
+            insert_data = (split_data[0], split_data[1])
             cursor.execute(add_query, insert_data)
         self.cnx.commit()
         return
@@ -112,13 +105,13 @@ class RDS:
         
         cursor = self.cnx.cursor()
         if(filter == ''):
-            cursor.execute("SELECT * FROM notes")
+            cursor.execute("SELECT * FROM projet")
         else:
-            cursor.execute("SELECT * FROM notes WHERE matiere LIKE '%{filter}%'")
+            cursor.execute("SELECT * FROM projet WHERE matiere LIKE '%{filter}%'")
         
         data = []
-        for (matiere, intervenant, CC1, CC2, coef, ects) in cursor:
-            data.append(F"{matiere} - {intervenant} - {coef} - {ects} - {CC1} - {CC2}<br>")
+        for (matiere, nbHeures) in cursor:
+            data.append(F"{matiere} - {nbHeures}<br>")
             
         return "Empty" if len(data) == 0 else data
 
