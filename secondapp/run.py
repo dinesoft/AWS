@@ -5,31 +5,9 @@ import mysql.connector
 app = Flask(__name__)
 
 
-@app.route("/load/s3")
-def loadS3():
-    matiere = ''
-    if 'matiere' in request.args:
-        matiere = request.args['matiere']
-    s3 = S3()
-    result = s3.load(matiere)
-    response = Response(result)
-    response.headers.add("Access-Control-Allow-Origin", "*")
-    return response
-
-@app.route("/load/rds")
-def loadRDS():
-    matiere = ''
-    if 'matiere' in request.args:
-        matiere = request.args['matiere']
-    rds = RDS()
-    result = rds.load(matiere)
-    response = Response(result)
-    response.headers.add("Access-Control-Allow-Origin", "*")
-    return response
-    
     
 @app.route("/transfert/rds")
-def transfertToRDS():
+def transfert():
     s3 = S3()
     result = s3.load('')
     
@@ -102,7 +80,6 @@ class RDS:
         return
     
     def load(self, filter):
-        
         cursor = self.cnx.cursor()
         if(filter == ''):
             cursor.execute("SELECT * FROM projet")

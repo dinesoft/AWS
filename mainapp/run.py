@@ -5,7 +5,9 @@ IP = "localhost"
 PORT = 3000
 def build_url(route):
     return F"http://{IP}:{PORT}/{route}"
-def build_html_url(route):
+
+
+def build_button(route):
     route = build_url(route)
     return F"<button onclick={route}>Ajouter</button>"
     
@@ -29,28 +31,28 @@ def hello():
         F"<h1>BI&Big Data</h1>"\
         F"<p>30h00</p>"\
         F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
-        F"<br>{build_html_url('transfert/rds')}"\
+        F"<br>{build_button('transfert/rds')}"\
         F"</form>"\
         F"</div>"\
         F"<div class='col-sm' style='border:  0.3mm solid black'>"\
         F"<h1>Communication Professionelle</h1>"\
         F"<p>15H00</p>"\
         F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
-        F"<br>{build_html_url('transfert/rds')}"\
+        F"<br>{build_button('transfert/rds')}"\
         F"</form>"\
         F"</div>"\
 	F"<div class='col-sm' style='border:  0.3mm solid black'>"\
         F"<h1>Deep Learning</h1>"\
         F"<p>15H00</p>"\
         F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
-        F"<br>{build_html_url('transfert/rds')}"\
+        F"<br>{build_button('transfert/rds')}"\
         F"</form>"\
         F"</div>"\
         F"<div class='col-sm' style='border:  0.3mm solid black'>"\
         F"<h1>AWS</h1>"\
         F"<p>30h00</p>"\
         F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
-	F"<br>{build_html_url('transfert/rds')}"\
+	F"<br>{build_button('transfert/rds')}"\
         F"</form>"\
         F"</div>"\
         F"</div>"\
@@ -59,28 +61,28 @@ def hello():
         F"<h1>Management</h1>"\
         F"<p>15h00</p>"\
         F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
-        F"<br>{build_html_url('transfert/rds')}"\
+        F"<br>{build_button('transfert/rds')}"\
         F"</form>"\
         F"</div>"\
         F"<div class='col-sm' style='border:  0.3mm solid black'>"\
         F"<h1>Mathématiques</h1>"\
         F"<p>15H00</p>"\
         F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
-        F"<br>{build_html_url('transfert/rds')}"\
+        F"<br>{build_button('transfert/rds')}"\
         F"</form>"\
         F"</div>"\
 	F"<div class='col-sm' style='border:  0.3mm solid black'>"\
         F"<h1>Scala</h1>"\
         F"<p>15H00</p>"\
         F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
-        F"<br>{build_html_url('transfert/rds')}"\
+        F"<br>{build_button('transfert/rds')}"\
         F"</form>"\
         F"</div>"\
         F"<div class='col-sm' style='border:  0.3mm solid black'>"\
         F"<h1>Spark</h1>"\
         F"<p>30h00</p>"\
         F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
-	F"<br>{build_html_url('transfert/rds')}"\
+	F"<br>{build_button('transfert/rds')}"\
         F"</form>"\
         F"</div>"\
         F"</div>"\
@@ -89,42 +91,37 @@ def hello():
         F"<h1>Anglais</h1>"\
         F"<p>27H00</p>"\
         F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
-        F"<br>{build_html_url('transfert/rds')}"\
+        F"<br>{build_button('transfert/rds')}"\
         F"</form>"\
         F"</div>"\
         F"<div class='col-sm' style='border:  0.3mm solid black'>"\
         F"<h1>Cours electif</h1>"\
         F"<p>15H00</p>"\
         F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
-        F"<br>{build_html_url('transfert/rds')}"\
+        F"<br>{build_button('transfert/rds')}"\
         F"</form>"\
         F"</div>"\
 	F"<div class='col-sm' style='border:  0.3mm solid black'>"\
         F"<h1>E-learning</h1>"\
         F"<p>20H00</p>"\
         F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
-        F"<br>{build_html_url('transfert/rds')}"\
+        F"<br>{build_button('transfert/rds')}"\
         F"</form>"\
         F"</div>"\
         F"<div class='col-sm' style='border:  0.3mm solid black'>"\
         F"<h1>Open</h1>"\
         F"<p>OOH00</p>"\
         F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
-	F"<br>{build_html_url('transfert/rds')}"\
+	F"<br>{build_button('transfert/rds')}"\
         F"</form>"\
         F"</div>"\
         F"</div>"\
         F"</body>"\
 
-@app.route("/load/s3")
-def loadS3():
-    return requests.get(url=build_url("/load/s3")).text
-    
-@app.route("/load/rds")
-def loadRDS():
-    return requests.get(url=build_url("/load/rds")).text
+
 @app.route("/transfert/rds")
-def transfertToRDS():
+def transfert():
     return requests.get(url=build_url("/transfert/rds")).text
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=3001)
