@@ -11,28 +11,24 @@ def build_url(route):
 
 def build_html_url(route):
     route = build_url(route)
-    return 
-        F"<div class='row'>"\
+    return F"<div class='row'>"\
         F"<div class='col-sm' style='border: 0.3mm solid black'>"\
         F"<h1>BI&Big Data</h1>"\
         F"<p>30h00</p>"\
         F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
-        
         F"</form>"\
         F"</div>"\
         F"<div class='col-sm' style='border:  0.3mm solid black'>"\
         F"<h1>Communication Professionelle</h1>"\
         F"<p>15H00</p>"\
         F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
-        
         F"</form>"\
         F"</div>"\
 	F"</body>"\
     
 @app.route("/")
 def hello():
-    return 
-	F"<head>"\
+    return F"<head>"\
         F"<title>Projet AWS</title>"\
 	F"<meta charset='utf-8' />"\
 	F"<meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no' />"\
@@ -46,10 +42,10 @@ def hello():
         F"<br><br>"\
         F"<div class='container'>"\
 	F"<h1>BI&Big Data</h1>"\
-            F"<p>30h00</p>"\
-            F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
-            F"<br>{build_html_url('transfert/rds')}"\
-            F"</form>"
+        F"<p>30h00</p>"\
+        F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
+        F"<br>{build_html_url('transfert/rds')}"\
+        F"</form>"
 	
 
                 
