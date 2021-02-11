@@ -54,6 +54,66 @@ def hello():
         F"</form>"\
         F"</div>"\
         F"</div>"\
+        F"<div class='row'>"\
+        F"<div class='col-sm' style='border: 0.3mm solid black'>"\
+        F"<h1>Management</h1>"\
+        F"<p>15h00</p>"\
+        F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
+        F"<br>{build_html_url('transfert/rds')}"\
+        F"</form>"\
+        F"</div>"\
+        F"<div class='col-sm' style='border:  0.3mm solid black'>"\
+        F"<h1>Mathématiques</h1>"\
+        F"<p>15H00</p>"\
+        F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
+        F"<br>{build_html_url('transfert/rds')}"\
+        F"</form>"\
+        F"</div>"\
+	F"<div class='col-sm' style='border:  0.3mm solid black'>"\
+        F"<h1>Scala</h1>"\
+        F"<p>15H00</p>"\
+        F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
+        F"<br>{build_html_url('transfert/rds')}"\
+        F"</form>"\
+        F"</div>"\
+        F"<div class='col-sm' style='border:  0.3mm solid black'>"\
+        F"<h1>Spark</h1>"\
+        F"<p>30h00</p>"\
+        F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
+	F"<br>{build_html_url('transfert/rds')}"\
+        F"</form>"\
+        F"</div>"\
+        F"</div>"\
+        F"<div class='row'>"\
+        F"<div class='col-sm' style='border: 0.3mm solid black'>"\
+        F"<h1>Anglais</h1>"\
+        F"<p>27H00</p>"\
+        F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
+        F"<br>{build_html_url('transfert/rds')}"\
+        F"</form>"\
+        F"</div>"\
+        F"<div class='col-sm' style='border:  0.3mm solid black'>"\
+        F"<h1>Cours electif</h1>"\
+        F"<p>15H00</p>"\
+        F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
+        F"<br>{build_html_url('transfert/rds')}"\
+        F"</form>"\
+        F"</div>"\
+	F"<div class='col-sm' style='border:  0.3mm solid black'>"\
+        F"<h1>E-learning</h1>"\
+        F"<p>20H00</p>"\
+        F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
+        F"<br>{build_html_url('transfert/rds')}"\
+        F"</form>"\
+        F"</div>"\
+        F"<div class='col-sm' style='border:  0.3mm solid black'>"\
+        F"<h1>Open</h1>"\
+        F"<p>OOH00</p>"\
+        F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
+	F"<br>{build_html_url('transfert/rds')}"\
+        F"</form>"\
+        F"</div>"\
+        F"</div>"\
         F"</body>"\
 
 @app.route("/load/s3")
