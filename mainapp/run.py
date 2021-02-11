@@ -11,7 +11,8 @@ def build_url(route):
 
 def build_html_url(route):
     route = build_url(route)
-    return F"<div class='row'>"\
+    return F"<br><br><br><br><br>"\
+	F"<div class='row'>"\
         F"<div class='col-sm' style='border: 0.3mm solid black'>"\
         F"<h1>BI&Big Data</h1>"\
         F"<p>30h00</p>"\
