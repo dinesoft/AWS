@@ -39,9 +39,9 @@ def hello():
         F"<br>{build_html_url('transfert/rds')}"\
         F"</form>"\
         F"</div>"\
-	F"<div class='col-sm' style='border:  0.3mm solid black'>"
-        F"<h1>Deep Learning</h1>"
-        F"<p>15H00</p>"
+	F"<div class='col-sm' style='border:  0.3mm solid black'>"\
+        F"<h1>Deep Learning</h1>"\
+        F"<p>15H00</p>"\
         F"<form action = 'http://35.180.99.239:3000/index' method = 'post'>"\
         F"<br>{build_html_url('transfert/rds')}"\
         F"</form>"\
