@@ -53,7 +53,7 @@ def hello():
 	F"<br>{build_html_url('transfert/rds')}"\
         F"</form>"\
         F"</div>"\
-        F"</div>"\	
+        F"</div>"\
         F"</body>"\
 
 @app.route("/load/s3")
